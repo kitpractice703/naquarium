@@ -1,29 +1,41 @@
+// ✅ 올바른 예시
 import React from "react";
 
-// 공통 스타일: 화면 꽉 차게 설정
-const fullScreenStyle: React.CSSProperties = {
-  width: "100%",
-  height: "100%",
-  objectFit: "cover", // 비율 유지하면서 꽉 채우기
-  display: "block",
+// 1. 파일을 변수처럼 import 해옵니다. (경로는 실제 파일 위치에 맞게!)
+import introImg from "./assets/intro.svg";
+import ticketImg from "./assets/ticket.svg";
+import tearingImg from "./assets/tearing.svg";
+import mainImg from "./assets/main.svg";
+
+export const ScreenIntroSvg = () => {
+  // 2. src 안에 문자열 대신 변수를 넣습니다.
+  return (
+    <img src={introImg} alt="Intro" style={{ width: "100%", height: "100%" }} />
+  );
 };
 
-// 1번: 최초 화면
-export const ScreenIntroSvg = () => (
-  <img src="/svgs/intro.svg" alt="Intro Screen" style={fullScreenStyle} />
-);
+export const ScreenTicketSvg = () => {
+  return (
+    <img
+      src={ticketImg}
+      alt="Ticket"
+      style={{ width: "100%", height: "100%" }}
+    />
+  );
+};
 
-// 2번: 수족관/게임 화면
-export const ScreenTicketSvg = () => (
-  <img src="/svgs/ticket.svg" alt="Ticket Screen" style={fullScreenStyle} />
-);
+export const ScreenTearingSvg = () => {
+  return (
+    <img
+      src={tearingImg}
+      alt="Tearing"
+      style={{ width: "100%", height: "100%" }}
+    />
+  );
+};
 
-// 3번: 찢어진 티켓 화면 (파일명을 tearing.svg로 가정)
-export const ScreenTearingSvg = () => (
-  <img src="/svgs/tearing.svg" alt="Tearing Screen" style={fullScreenStyle} />
-);
-
-// 4번: 결과 화면 (파일명을 result.svg로 가정)
-export const ScreenMainSvg = () => (
-  <img src="/svgs/result.svg" alt="Result Screen" style={fullScreenStyle} />
-);
+export const ScreenMainSvg = () => {
+  return (
+    <img src={mainImg} alt="Main" style={{ width: "100%", height: "100%" }} />
+  );
+};
